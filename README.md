@@ -4,6 +4,10 @@ An AI-powered **News Aggregation and Political Bias Detection System** built usi
 The system fetches live news from **The Guardian API**, summarizes articles, and detects potential political bias.
 
 ---
+## 🌐 Live Demo
+
+🔗 **Deployed Application:**  
+https://news-aggregator-bias-detection.onrender.com
 
 ## 🚀 Features
 
