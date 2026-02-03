@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h1></h1>
+    <p class="subtitle">AI-powered News Summarization & Bias Detection</p>
+
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2e0225ff;
+            margin: 0;
+            padding: 20px;
+        }
+        .news-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+
+        h1 {
+            text-align: center;
+            color: #ddf37dff;
+            margin-bottom: 30px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .refresh {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .refresh a {
+            padding: 10px 15px;
+            background: #2c3e50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .news-card {
+            background: #8fdbf0ff;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .news-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #6994f7ff;
+        }
+
+        .news-source {
+            font-size: 14px;
+            color: #b3f59dff;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-weight: bold;
+            margin-top: 15px;
+            color: #333;
+        }
+
+        .bias-right {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        .bias-left {
+            color: #2980b9;
+            font-weight: bold;
+        }
+
+        .bias-neutral {
+            color: #7f8c8d;
+            font-weight: bold;
+        }
+
+        .confidence {
+            font-size: 14px;
+            color: #ef3535ff;
+        }
+        .confidence-bar {
+            width: 100%;
+            background: #e5e7eb;
+            border-radius: 10px;
+            height: 10px;
+            margin-top: 6px;
+            overflow: hidden;
+        }
+
+        .confidence-fill {
+            height: 100%;
+            background: linear-gradient(to right, #22c55e, #facc15, #ef4444);
+        }
+
+    </style>
+</head>
+
+<body>
+
+<h1>🌍 Global News Intelligence System</h1>
+  <!--
+<div style="text-align:center; margin-bottom:20px;">
+    <a href="/refresh" style="
+        padding:10px 15px;
+        background:#2c3e50;
+        color:white;
+        text-decoration:none;
+        border-radius:5px;
+        font-size:14px;">
+        🔄 Refresh News
+    </a>
+</div>-->
+
+{% if articles and articles|length > 0 %}
+    {% for article in articles %}
+
+        <div class="news-card">
+
+             <!-- ✅ STEP 2: IMAGE GOES HERE -->
+            {% set title_lower = article.title | lower %}
+
+            {% if "politics" in title_lower or "government" in title_lower %}
+                <img class="news-image" src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620">
+            {% elif "protest" in title_lower %}
+                <img class="news-image" src="https://images.unsplash.com/photo-1593113598332-cd288d649433">
+            {% elif "technology" in title_lower or "tech" in title_lower %}
+                <img class="news-image" src="https://images.unsplash.com/photo-1518770660439-4636190af475">
+            {% else %}
+                <img class="news-image" src="https://images.unsplash.com/photo-1504711434969-e33886168f5c">
+            {% endif %}
+
+            <div class="news-title">{{ article.title }}</div>
+            <div class="news-source">Source: {{ article.source }}</div>
+
+            <div class="section-title">📌 AI Summary</div>
+            <p>{{ article.summary }}</p>
+
+            <div class="section-title">⚖️ Bias Detection</div>
+
+            {% if article.bias == "Right Bias" %}
+                <p class="bias-right">Bias: {{ article.bias }}</p>
+            {% elif article.bias == "Left Bias" %}
+                <p class="bias-left">Bias: {{ article.bias }}</p>
+            {% else %}
+                <p class="bias-neutral">Bias: {{ article.bias }}</p>
+            {% endif %}
+
+            <div class="confidence">
+                Confidence Score: {{ article.confidence }}
+                <div class="confidence-bar">
+                    <div class="confidence-fill"
+                        style="width: {{ article.confidence * 100 }}%;"></div>
+                </div>
+            </div>
+        </div>
+
+        
+    {% endfor %}
+{% else %}
+    <p>No news available</p>
+{% endif %}
+
+</body>
+</html>
