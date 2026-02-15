@@ -141,6 +141,20 @@ This project is intended **strictly for educational and academic purposes**, inc
 - Store historical summaries
 - Deploy with scalable cloud infrastructure
 ---
+## 🧩 Challenges Faced
+
+- Handling real-time API responses efficiently  
+- Optimizing transformer models for CPU execution  
+- Designing a multi-agent workflow using CrewAI  
+- Ensuring meaningful bias classification with limited labeled data
+---
+## 📚 Key Learnings
+
+- Practical experience integrating NLP models into Flask applications  
+- Understanding multi-agent orchestration using CrewAI  
+- Deploying AI-powered web applications  
+- Working with external APIs and environment variables securely  
+---
 📌 Resume Highlight
 
 Built an AI-powered Flask web application integrating The Guardian API and transformer-based NLP models for automated news summarization and political bias detection using multi-agent orchestration.
