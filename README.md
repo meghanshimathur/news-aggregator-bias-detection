@@ -114,6 +114,13 @@ For each news article, the system displays:
   - Right Bias
   - Neutral
 - Confidence Score (visual indicator)
+---
+## 📸 Application Preview
+
+![Result 1](assets/result1.png)
+
+![Result 2](assets/result2.png)
+---
 
 ## 🎓 Educational Use
 
