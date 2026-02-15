@@ -1,13 +1,30 @@
 # 📰 News Aggregator & Bias Detection Agent
 
-An AI-powered **News Aggregation and Political Bias Detection System** built using **Flask**, **CrewAI**, and **Transformer-based NLP models**.  
-The system fetches live news from **The Guardian API**, summarizes articles, and detects potential political bias.
+An AI-powered **News Aggregation and Political Bias Detection System** built using **Flask**, **CrewAI**, and **Transformer-based NLP models**.
+
+The system fetches live news from **The Guardian API**, generates concise summaries, and detects potential political bias.
 
 ---
+
+## 💡 Problem Statement
+
+With the growing volume of online news, users often struggle to quickly understand content and identify political bias.
+
+This project aims to:
+
+- Aggregate real-time news articles
+- Automatically summarize long-form content
+- Detect political bias using NLP models
+- Present insights through a simple web interface
+
+---
+
 ## 🌐 Live Demo
 
 🔗 **Deployed Application:**  
 https://news-aggregator-bias-detection.onrender.com
+
+---
 
 ## 🚀 Features
 
@@ -15,8 +32,8 @@ https://news-aggregator-bias-detection.onrender.com
 - 🧠 AI-based news summarization
 - ⚖️ Political bias detection (Right Bias / Neutral)
 - 🤖 Multi-agent architecture using CrewAI
-- 🌐 Web interface built with Flask
-- 🖥️ Optimized for CPU-only execution (macOS safe)
+- 🌐 Flask-based web interface
+- 🖥️ Optimized for CPU-only execution (macOS compatible)
 
 ---
 
@@ -25,16 +42,20 @@ https://news-aggregator-bias-detection.onrender.com
 The project follows a **multi-agent AI workflow**:
 
 | Agent Name | Responsibility |
-|----------|----------------|
+|------------|----------------|
 | News Data Collector | Fetches real-time news from The Guardian |
-| News Summarizer | Generates concise and neutral summaries |
+| News Summarizer | Generates concise summaries |
 | Bias Analyzer | Detects political bias with confidence score |
 
 Agents are executed sequentially using **CrewAI**.
 
+Flow:
+
+User → Flask App → Guardian API → NLP Models → Bias Detection → Web Output
+
 ---
 
-## 🛠️ Tech Stack
+## 🛠 Tech Stack
 
 - **Programming Language:** Python  
 - **Backend Framework:** Flask  
@@ -43,7 +64,7 @@ Agents are executed sequentially using **CrewAI**.
   - `facebook/bart-large-cnn` – Summarization  
   - `facebook/bart-large-mnli` – Bias Detection  
 - **API Used:** The Guardian Open API  
-- **Frontend:** HTML (Jinja2 Templates)
+- **Frontend:** HTML (Jinja2 Templates)  
 
 ---
 
@@ -82,6 +103,7 @@ https://open-platform.theguardian.com/
 4️⃣ Run the Application
 python3.11 app.py
 ```
+---
 📊 Output Example
 
 For each news article, the system displays:
@@ -103,10 +125,17 @@ This project is intended **strictly for educational and academic purposes**, inc
 - Learning multi-agent orchestration using CrewAI  
 - Building and deploying Flask-based AI applications  
 
+---
+🚀 Future Improvements
 
+- Add support for multiple news sources
+- Improve bias classification accuracy
+- Add user authentication
+- Store historical summaries
+- Deploy with scalable cloud infrastructure
+---
+📌 Resume Highlight
 
-
-
-
+Built an AI-powered Flask web application integrating The Guardian API and transformer-based NLP models for automated news summarization and political bias detection using multi-agent orchestration.
 
 
